@@ -8,7 +8,7 @@ if (OPENAI_API_KEY === "") {
     const errorMessage = document.createElement('span');
     errorMessage.style.color = "#f00";
     errorMessage.textContent = "Por favor, configure a chave da API OpenAI no arquivo js/app.js";
-    document.getElementById('food-situation').appendChild(errorMessage);
+    document.getElementById('recipe-form').appendChild(errorMessage);
 }
 
 // Proceed if the recipe form element exists on the page
