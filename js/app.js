@@ -32,7 +32,11 @@ if (recipeForm) {
         // Get the value of the recipe field
         const recipeInput = document.getElementById('food-input');
         const recipe = recipeInput.value;
-        const prompt = `Atue como um chef de cozinha e interprete a receita abaixo:\n\n${recipe}\n\nEu preciso que você interprete a receita de forma detalhada, com base na culinária. Por favor`;
+        const prompt = `
+        Crie uma receita com os seguintes ingredientes: ${input}
+        Escreva a receita em português, pois o modelo de linguagem que estamos usando é o português.
+        A receita deve conter somente os ingredientes acima.
+        `;
 
         // Display the entered recipe
         document.getElementById('food-situation').textContent = recipe;
