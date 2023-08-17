@@ -1,0 +1,74 @@
+// Definir variaveis de cores
+/* Color Theme Swatches in Hex */
+$Sem-Desperdício-1-hex: #0DF205;
+$Sem-Desperdício-2-hex: #27A614;
+$Sem-Desperdício-3-hex: #82BF26;
+$Sem-Desperdício-4-hex: #F27B13;
+$Sem-Desperdício-5-hex: #0D0D0D;
+$Sem-Desperdício-5-hex: #0D0D0D;
+$Sem-Desperdício-6-hex: #FFFAF6;
+
+// Inserir cores no Bootstrap
+$theme-colors: (
+    "color-1": $Sem-Desperdício-1-hex,
+    "color-2": $Sem-Desperdício-2-hex,
+    "color-3": $Sem-Desperdício-3-hex,
+    "color-4": $Sem-Desperdício-4-hex,
+    "color-5": $Sem-Desperdício-5-hex,
+    "color-6": $Sem-Desperdício-6-hex,
+);
+
+// Bordas arrredondadas
+.border-radius-1 {
+    border-radius: 0.25rem;
+}
+
+.border-radius-2 {
+    border-radius: 0.5rem;
+}
+
+.border-radius-3 {
+    border-radius: 1rem;
+}
+
+.border-radius-4 {
+    border-radius: 1.5rem;
+}
+
+.border-radius-5 {
+    border-radius: 3rem;
+}
+
+// Seção das fontes
+.fonte-titulo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.fonte-lista {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fonte-lista li {
+    margin-bottom: 10px;
+}
+
+.link-icon {
+    margin-right: 5px;
+}
+
+
+// Torna a fonte responsiva. Por padrão, vem desativada.
+$enable-responsive-font-sizes: true !default;
+
+// Para ativar sombra em todos os elementos do Bootstrap, altere essa opção para true;
+$enable-shadows: false !default;
+
+// Para desativar os cantos arredondados de todos os elementos do Bootstrap, altere essa opção para false;
+$enable-rounded: true !default;
+
+// Para as cores terem um degradê, altere essa opção para true
+$enable-gradients: false !default;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
