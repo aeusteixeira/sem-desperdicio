@@ -58,6 +58,14 @@ $theme-colors: (
     margin-right: 5px;
 }
 
+// Alinhamento dos cards
+
+.equal-height-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 
 // Torna a fonte responsiva. Por padrão, vem desativada.
 $enable-responsive-font-sizes: true !default;
@@ -71,4 +79,4 @@ $enable-rounded: true !default;
 // Para as cores terem um degradê, altere essa opção para true
 $enable-gradients: false !default;
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
