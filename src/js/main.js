@@ -109,3 +109,52 @@ function removeRecipeFromLocalStorage(recipe) {
     alert('Receita removida com sucesso!');
     location.reload();
 }
+
+const placeholderTexts = [
+    "Adicione os ingredientes que você tem em casa separados por vírgula",
+    "Arroz, feijão, frango, cenoura",
+    "Macarrão, tomate, queijo, presunto",
+    "Batata, cebola, alho, carne moída",
+    "Ovos, leite, farinha, açúcar",
+    "Peito de frango, abobrinha, pimentão, cebola",
+    "Peixe, limão, alho, azeite",
+    "Espinafre, queijo feta, massa folhada, pinhões",
+    "Pão, ovo, salsicha, queijo",
+    "Ervilha, milho, pimenta, cebola",
+    "Iogurte, morangos, granola, mel",
+];
+
+let currentPlaceholderIndex = 0;
+let currentPlaceholder = placeholderTexts[currentPlaceholderIndex];
+let typingTimer;
+
+function typePlaceholder() {
+    if (currentPlaceholder.length > 0) {
+        ingredients.placeholder += currentPlaceholder.charAt(0);
+        currentPlaceholder = currentPlaceholder.slice(1);
+        typingTimer = setTimeout(typePlaceholder, 50); // Velocidade da digitação (ajuste conforme desejado)
+    } else {
+        typingTimer = setTimeout(erasePlaceholder, 500); // Tempo para apagar (ajuste conforme desejado)
+    }
+}
+
+function erasePlaceholder() {
+    if (ingredients.placeholder.length > 0) {
+        ingredients.placeholder = ingredients.placeholder.slice(0, -1);
+        typingTimer = setTimeout(erasePlaceholder, 25); // Velocidade para apagar (ajuste conforme desejado)
+    } else {
+        currentPlaceholderIndex = (currentPlaceholderIndex + 1) % placeholderTexts.length;
+        currentPlaceholder = placeholderTexts[currentPlaceholderIndex];
+        typingTimer = setTimeout(typePlaceholder, 1000); // Tempo entre placeholders (ajuste conforme desejado)
+    }
+}
+
+typePlaceholder();
+
+ingredients.addEventListener('focus', () => {
+    clearTimeout(typingTimer);
+});
+
+ingredients.addEventListener('blur', () => {
+    typePlaceholder();
+});

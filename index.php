@@ -22,7 +22,7 @@
         <section>
             <form id="form" class="form">
                 <div class="form-group">
-                    <textarea class="form-control" id="ingredients" rows="5"></textarea>
+                    <textarea class="form-control" id="ingredients" rows="5" require></textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-color-2" id="generateRevenue">
