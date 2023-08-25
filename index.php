@@ -7,17 +7,21 @@
         <header class="text-center">
             <img src="src/img/sem-desperdicio-logo.png" alt="Sem Desperdício" class="img-fluid" width="240">
             <h1 class="text-color-2 h3">
-                Evite o desperdício de alimentos em sua casa utilizando Inteligência Artificial.
+                Reduza o Desperdício de Alimentos com a Ajuda da Inteligência Artificial.
             </h1>
             <p>
-                De acordo com a ONU, 45% de todas as frutas e hortaliças que nascem são perdidos e 30% de todo o
-                alimento do mundo são desperdiçados¹. Estima-se que 17% dos alimentos disponíveis no mundo acabam sendo
-                jogados fora²
+                A Organização das Nações Unidas (ONU) estima que 45% de todas as frutas e hortaliças produzidas sejam
+                perdidas, enquanto 30% de todo o alimento mundial é desperdiçado¹. Contribua para mudar essa realidade!
             </p>
+            <div class="my-3">
+    Já ajudamos a criar mais de <span id="totalRecipes" class="text-color-2 font-weight-bold">0</span> refeições deliciosas e sustentáveis.
+</div>
+
             <?php
-                include_once(__DIR__ . '/components/video.php');
-            ?>
+        include_once(__DIR__ . '/components/video.php');
+    ?>
         </header>
+
         <hr>
         <section>
             <form id="form" class="form">
@@ -32,7 +36,7 @@
             </form>
         </section>
         <section id="result" class="mb-2">
-            
+
         </section>
         <section id="fontes">
             <p class="fonte-titulo">
