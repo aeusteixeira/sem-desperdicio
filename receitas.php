@@ -12,28 +12,14 @@
         </p>
     </header>
     <hr>
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <div class="card recipe-card">
-                <img src="src/img/sem-desperdicio-banner.jpg" class="card-img-top" alt="Nome da Receita">
-                <div class="card-body">
-                    <h5 class="card-title">Nome da Receita</h5>
-                    <p class="card-text">Descrição breve da receita...</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between align-items-center">
-                    <button class="btn btn-danger">Excluir</button>
-                    <button class="btn btn-primary">Imprimir</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Repita os blocos .col-lg-4 para cada receita -->
+    <div class="row" id="myRecipes">
     </div>
 </section>
-
-
-    </main>
-
+</main>
 <?php
     include_once(__DIR__ . '/components/footer.php');
 ?>
+
+<script>
+    renderSavedRecipes();
+</script>

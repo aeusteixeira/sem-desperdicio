@@ -2,20 +2,28 @@ const form = document.getElementById('form');
 const ingredients = document.getElementById('ingredients');
 const result = document.getElementById('result');
 const generateRevenue = document.getElementById('generateRevenue');
+const myRecipes = document.getElementById('myRecipes');
 
-const renderRecipeCard = (formattedData) => `
-<hr>
-<div class="card rounded shadow">
+const renderRecipeCard = (formattedData, options = {
+    remove: false,
+    save: false
+}) => `
+<div class="card rounded shadow mb-2">
     <div class="card-body">
         <p class="card-text">
             ${formattedData}
         </p>
     </div>
     <div class="card-footer">
-        <button class="btn btn-primary" id="saveRecipe">Salvar</button>
+        <div class="d-flex justify-content-between">
+            <div>
+                ${options.remove ? `<button class="btn btn-danger btn-sm" id="removeRecipe" onclick="removeRecipeFromLocalStorage('${formattedData}')">Remover</button>` : ''}
+
+                ${options.save ? `<button class="btn btn-success btn-sm" id="saveRecipe">Salvar</button>` : ''}
+                </div>
+            <div>
     </div>
 </div>
-<hr>
 `;
 
 const saveRecipe = document.getElementById('saveRecipe');
@@ -55,7 +63,9 @@ const fetchRecipe = async (ingredientsVal) => {
         const data = await response.json();
 
         const formattedData = data.recipe;
-        result.innerHTML = renderRecipeCard(formattedData);
+        result.innerHTML = renderRecipeCard(formattedData, {
+            save: true
+        });
     } catch (error) {
         console.log(error);
     }
@@ -72,3 +82,29 @@ form.addEventListener('submit', (e) => {
         ingredients.value = '';
     }
 });
+
+// Função para pegar as receitas salvas no Local Storage
+function getSavedRecipes() {
+    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    return recipes;
+}
+
+// Função para renderizar as receitas salvas no Local Storage
+function renderSavedRecipes() {
+    const recipes = getSavedRecipes();
+    recipes.forEach((recipe) => {
+        myRecipes.innerHTML += renderRecipeCard(recipe, {
+            remove: true,
+        });
+    });
+}
+
+// Função para remover uma receita do Local Storage
+function removeRecipeFromLocalStorage(recipe) {
+    const recipes = getSavedRecipes();
+    const recipeIndex = recipes.indexOf(recipe);
+    recipes.splice(recipeIndex, 1);
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+    alert('Receita removida com sucesso!');
+    location.reload();
+}

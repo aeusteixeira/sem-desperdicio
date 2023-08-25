@@ -107,65 +107,7 @@ function handleApiResponse(data) {
     showRecipeCard(recipe);
 }
 
-// Function to get the saved recipes from Local Storage
-function getSavedRecipes() {
-    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
-    // Render the recipes in the cards
-    const receitasSection = document.querySelector('.revenues');
-    receitasSection.innerHTML = '';
-
-    if (recipes.length === 0) {
-        const message = document.createElement('p');
-        message.textContent = 'Nenhuma receita salva.';
-        receitasSection.appendChild(message);
-    } else {
-        recipes.forEach((recipe, index) => {
-            const card = document.createElement('div');
-            card.classList.add('recipe-card');
-
-            const recipeContent = document.createElement('div');
-            recipeContent.classList.add('recipe-content');
-
-            const recipeTitle = document.createElement('h3');
-            recipeTitle.classList.add('recipe-title');
-            recipeTitle.textContent = 'Receita';
-            recipeContent.appendChild(recipeTitle);
-
-            const recipeText = document.createElement('p');
-            recipeText.classList.add('recipe-text');
-            recipeText.textContent = recipe;
-            recipeContent.appendChild(recipeText);
-
-            const recipeActions = document.createElement('div');
-            recipeActions.classList.add('recipe-actions');
-
-            const deleteButton = document.createElement('button');
-            deleteButton.classList.add('btn');
-            deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
-            deleteButton.addEventListener('click', () => {
-                deleteRecipe(index);
-            });
-            recipeActions.appendChild(deleteButton);
-
-            card.appendChild(recipeContent);
-            card.appendChild(recipeActions);
-
-            receitasSection.appendChild(card);
-        });
-    }
-}
-
-// Function to delete a recipe from favorites
-function deleteRecipe(index) {
-    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-
-    if (index >= 0 && index < recipes.length) {
-        recipes.splice(index, 1);
-        localStorage.setItem('recipes', JSON.stringify(recipes));
-        getSavedRecipes(); // Update the cards after deletion
-    }
-}
 
 // Function to show the recipe card when a recipe is suggested
 function showRecipeCard(recipe) {
