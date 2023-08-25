@@ -3,6 +3,7 @@ const ingredients = document.getElementById('ingredients');
 const result = document.getElementById('result');
 const generateRevenue = document.getElementById('generateRevenue');
 const myRecipes = document.getElementById('myRecipes');
+const savedRecipesCount = document.getElementById('savedRecipesCount');
 
 const renderRecipeCard = (formattedData, options = {
     remove: false,

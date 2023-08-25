@@ -52,7 +52,7 @@ function isActivePage($currentPage, $pageName) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-color-2 shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <img src="src/img/favicon/android-chrome-512x512.png" class="d-inline-block align-top" class="img-fluid"
                     alt="Project" width="30" height="30">
                 Sem Desperdício
@@ -78,11 +78,15 @@ function isActivePage($currentPage, $pageName) {
                     <li class="nav-item <?= isActivePage($currentPage, 'receitas') ?>">
                         <a class="nav-link" href="receitas.php">
                             <i class="fas fa-envelope"></i>
+                            <span class="badge badge-pill badge-color-1" id="savedRecipesCount">
+                                <script>
+                                    localStorage.getItem('recipes') ? savedRecipesCount.innerText = JSON.parse(localStorage.getItem('recipes')).length : savedRecipesCount.innerText = 0;
+                                </script>
+                            </span>
                             Minhas receitas
                         </a>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
