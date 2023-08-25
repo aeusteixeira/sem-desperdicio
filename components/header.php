@@ -53,7 +53,7 @@ function isActivePage($currentPage, $pageName) {
     <nav class="navbar navbar-expand-lg navbar-dark bg-color-2 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="img/favicon/android-chrome-512x512.png" class="d-inline-block align-top" class="img-fluid"
+                <img src="src/img/favicon/android-chrome-512x512.png" class="d-inline-block align-top" class="img-fluid"
                     alt="Project" width="30" height="30">
                 Sem Desperdício
             </a>
