@@ -14,12 +14,9 @@
                 alimento do mundo são desperdiçados¹. Estima-se que 17% dos alimentos disponíveis no mundo acabam sendo
                 jogados fora²
             </p>
-            <p>
-                <a href="#" class="btn btn-color-2">
-                    <i class="fas fa-play"></i>
-                    Assistir vídeo
-                </a>
-            </p>
+            <?php
+                include_once(__DIR__ . '/components/video.php');
+            ?>
         </header>
         <hr>
         <section>

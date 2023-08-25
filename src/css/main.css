@@ -1,5 +1,14 @@
 @charset "UTF-8";
 /* Color Theme Swatches in Hex */
+body {
+  background-image: url("../img/sem-desperdicio-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
 .border-radius-1 {
   border-radius: 0.25rem;
 }

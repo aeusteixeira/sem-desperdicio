@@ -49,7 +49,7 @@ function isActivePage($currentPage, $pageName) {
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
-<body class="bg-color-3">
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-color-2 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">

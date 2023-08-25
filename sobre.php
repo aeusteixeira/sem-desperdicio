@@ -7,9 +7,9 @@
             <header class="text-center">
                 <img src="src/img/sem-desperdicio-logo.png" alt="Sem Desperdício" class="img-fluid" width="240">
                 <h1 class="text-color-2 h3">Sobre o Sem Desperdício</h1>
-                <a href="#" class="btn btn-color-2">
-                    <i class="fas fa-play"></i> Assistir vídeo
-                </a>
+                <?php
+                    include_once(__DIR__ . '/components/video.php');
+                ?>
             </header>
             <hr>
             <section>
