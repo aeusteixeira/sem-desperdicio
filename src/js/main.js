@@ -16,13 +16,13 @@ const renderRecipeCard = (formattedData, options = {
         </p>
     </div>
     <div class="card-footer">
-        <div class="d-flex justify-content-between">
-            <div>
-                ${options.remove ? `<button class="btn btn-danger btn-sm" id="removeRecipe" onclick="removeRecipeFromLocalStorage('${formattedData}')">Remover</button>` : ''}
+        ${options.remove ? `<button class="btn btn-danger btn-sm" id="removeRecipe" onclick="removeRecipeFromLocalStorage('${formattedData}')">
+            Remover
+        </button>` : ''}
 
-                ${options.save ? `<button class="btn btn-success btn-sm" id="saveRecipe">Salvar</button>` : ''}
-                </div>
-            <div>
+        ${options.save ? `<button class="btn btn-success btn-sm" id="saveRecipe">
+            Salvar
+        </button>` : ''}
     </div>
 </div>
 `;
