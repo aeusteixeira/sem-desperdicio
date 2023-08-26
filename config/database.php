@@ -31,4 +31,11 @@ class Database {
     public function closeConnection() {
         $this->conn->close();
     }
+
+    public static function getTotalRecipeCount($conn) {
+        $sql = "SELECT COUNT(*) as total FROM recipes";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        return $row['total'];
+    }
 }

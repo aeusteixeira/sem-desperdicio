@@ -1,7 +1,18 @@
 <?php
     $currentPage = 'index';
     include_once(__DIR__ . '/components/header.php');
+    $config = require_once(__DIR__ . '/config/config.php');
+    require_once(__DIR__ . '/config/database.php');
+
+    $conn = (new Database(
+        $config['DB_HOST'],
+        $config['DB_USERNAME'],
+        $config['DB_PASSWORD'],
+        $config['DB_DATABASE']
+    ))->getConnection();
+    $totalRecipes = Database::getTotalRecipeCount($conn);
 ?>
+
 <main class="my-4">
     <section class="container bg-color-6 py-4 px-5 border-radius-2 shadow">
         <header class="text-center">
@@ -14,8 +25,13 @@
                 perdidas, enquanto 30% de todo o alimento mundial é desperdiçado¹. Contribua para mudar essa realidade!
             </p>
             <div class="my-3">
-    Já ajudamos a criar mais de <span id="totalRecipes" class="text-color-2 font-weight-bold">0</span> refeições deliciosas e sustentáveis.
-</div>
+                Já ajudamos a criar mais de <span id="totalRecipes" class="text-color-2 font-weight-bold">
+                <?php
+                    echo $totalRecipes;
+                ?>
+                </span>
+                refeições deliciosas e sustentáveis.
+            </div>
 
             <?php
         include_once(__DIR__ . '/components/video.php');
