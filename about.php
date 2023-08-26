@@ -1,5 +1,5 @@
 <?php
-    $currentPage = 'sobre';
+    $currentPage = 'about';
     include_once(__DIR__ . '/components/header.php');
 ?>
     <main class="my-4">

@@ -18,8 +18,9 @@ function isActivePage($currentPage, $pageName) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
         <?= $currentPage === 'index' ? 'Sem Desperdício - Evite o Desperdício de Alimentos' : '' ?>
-        <?= $currentPage === 'sobre' ? 'Sem Desperdício - Sobre' : '' ?>
-        <?= $currentPage === 'receitas' ? 'Sem Desperdício - Minhas Receitas' : '' ?>    
+        <?= $currentPage === 'about' ? 'Sem Desperdício - Sobre' : '' ?>
+        <?= $currentPage === 'my_recipes' ? 'Sem Desperdício - Minhas Receitas' : '' ?>
+        <?= $currentPage === 'terms_of_use' ? 'Sem Desperdício - Termos de Uso' : '' ?>
     </title>
 
     <!-- Metatags para SEO -->
@@ -69,14 +70,14 @@ function isActivePage($currentPage, $pageName) {
                             Página inicial
                         </a>
                     </li>
-                    <li class="nav-item <?= isActivePage($currentPage, 'sobre') ?>">
-                        <a class="nav-link" href="sobre.php">
+                    <li class="nav-item <?= isActivePage($currentPage, 'about') ?>">
+                        <a class="nav-link" href="about.php">
                             <i class="fas fa-user"></i>
                             Sobre
                         </a>
                     </li>
-                    <li class="nav-item <?= isActivePage($currentPage, 'receitas') ?>">
-                        <a class="nav-link" href="receitas.php">
+                    <li class="nav-item <?= isActivePage($currentPage, 'my_recipes') ?>">
+                        <a class="nav-link" href="my_recipes.php">
                             <i class="fas fa-envelope"></i>
                             <span class="badge badge-pill badge-color-1" id="savedRecipesCount">
                                 <script>
