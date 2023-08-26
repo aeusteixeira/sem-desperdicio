@@ -26,16 +26,12 @@
             </p>
             <div class="my-3">
                 Já ajudamos a criar mais de <span id="totalRecipes" class="text-color-2 font-weight-bold">
-                <?php
-                    echo $totalRecipes;
-                ?>
+                <?php echo $totalRecipes; ?>
                 </span>
                 refeições deliciosas e sustentáveis.
             </div>
 
-            <?php
-        include_once(__DIR__ . '/components/video.php');
-    ?>
+            <?php include_once(__DIR__ . '/components/video.php'); ?>
         </header>
 
         <hr>
