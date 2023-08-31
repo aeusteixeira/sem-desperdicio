@@ -40,11 +40,11 @@ function isActivePage($currentPage, $pageName) {
     <meta property="og:type" content="website">
 
     <!-- Metatags dos favicons -->
-    <link rel="icon" type="image/png" href="/img/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="src/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href=src"img/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#80CC28">
-    <meta name="msapplication-TileImage" content="/img/favicon/android-chrome-192x192.png">
+    <meta name="msapplication-TileImage" content="src/img/favicon/android-chrome-192x192.png">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
