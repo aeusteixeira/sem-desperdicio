@@ -4,6 +4,7 @@ const result = document.getElementById('result');
 const generateRevenue = document.getElementById('generateRevenue');
 const myRecipes = document.getElementById('myRecipes');
 const savedRecipesCount = document.getElementById('savedRecipesCount');
+const mealPlannerSwitch = document.getElementById('mealPlannerSwitch');
 
 const renderRecipeCard = (formattedData, options = {
     remove: false,
@@ -39,7 +40,7 @@ const saveRecipeToLocalStorage = (formattedData) => {
 result.addEventListener('click', (e) => {
     if (e.target.id === 'saveRecipe') {
         const formattedData = e.target.parentElement.previousElementSibling.children[0].innerText;
-        const url = `save.php?ingredients=${ingredients.value.trim()}&revenue=${encodeURIComponent(formattedData)}`;
+        const url = `save.php?ingredients=${ingredients.value.trim()}&revenue=${encodeURIComponent(formattedData)}&mealPlanner=${mealPlannerSwitch.checked ? 'true' : 'false'}`;
         
         fetch(url)
             .then((response) => {

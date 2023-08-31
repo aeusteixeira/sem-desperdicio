@@ -26,7 +26,7 @@
             </p>
             <div class="my-3">
                 Já ajudamos a criar mais de <span id="totalRecipes" class="text-color-2 font-weight-bold">
-                <?php echo $totalRecipes; ?>
+                    <?php echo $totalRecipes; ?>
                 </span>
                 refeições deliciosas e sustentáveis.
             </div>
@@ -40,6 +40,19 @@
                 <div class="form-group">
                     <textarea class="form-control" id="ingredients" rows="5" require></textarea>
                 </div>
+                <!---
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="mealPlannerSwitch">
+                        <label class="custom-control-label" for="mealPlannerSwitch" id="mealPlannerSwitchLabel">
+                            Ativar Planejador de Refeições da Semana
+                        </label>
+                    </div>
+                    <small class="form-text text-muted">
+                        O planejador de refeições da semana é uma funcionalidade que permite que você gere receitas para a semana inteira de uma só vez com base nos ingredientes que você tem em casa.
+                    </small>
+                </div>
+                --->
                 <div class="form-group">
                     <button type="submit" class="btn btn-color-2" id="generateRevenue">
                         Gerar receita
