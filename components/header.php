@@ -36,7 +36,7 @@ function isActivePage($currentPage, $pageName) {
         content="Sem Desperdício é uma aplicação simples e intuitiva que tem como objetivo ajudar as pessoas a evitar o desperdício de alimentos em suas casas.">
     <meta property="og:image" content="src/img/sem-desperdicio-banner.jpg">
     <meta property="og:image:alt" content="Sem Desperdício">
-    <meta property="og:url" content="https://aeusteixeira.github.io/sem-desperdicio">
+    <meta property="og:url" content="https://semdesperdicio.eco.br">
     <meta property="og:type" content="website">
 
     <!-- Metatags dos favicons -->
