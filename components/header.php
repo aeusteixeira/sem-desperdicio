@@ -34,7 +34,7 @@ function isActivePage($currentPage, $pageName) {
     <meta property=" og:title" content="Sem Desperdício - Evite o Desperdício de Alimentos">
     <meta property="og:description"
         content="Sem Desperdício é uma aplicação simples e intuitiva que tem como objetivo ajudar as pessoas a evitar o desperdício de alimentos em suas casas.">
-    <meta property="og:image" content="https://aeusteixeira.github.io/sem-desperdicio/img/sem-desperdicio-banner.jpg">
+    <meta property="og:image" content="src/img/sem-desperdicio-banner.jpg">
     <meta property="og:image:alt" content="Sem Desperdício">
     <meta property="og:url" content="https://aeusteixeira.github.io/sem-desperdicio">
     <meta property="og:type" content="website">
@@ -42,7 +42,7 @@ function isActivePage($currentPage, $pageName) {
     <!-- Metatags dos favicons -->
     <link rel="icon" type="image/png" href="src/img/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href=src"img/favicon/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href=src/img/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#80CC28">
     <meta name="msapplication-TileImage" content="src/img/favicon/android-chrome-192x192.png">
     <link rel="stylesheet" href="src/css/main.css">
@@ -55,7 +55,7 @@ function isActivePage($currentPage, $pageName) {
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="src/img/favicon/android-chrome-512x512.png" class="d-inline-block align-top" class="img-fluid"
-                    alt="Project" width="30" height="30">
+                    alt="Sem Desperdício" title="Sem Desperdício" width="30" height="30">
                 Sem Desperdício
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
