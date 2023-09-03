@@ -7,6 +7,8 @@ $allowed_domains = [
     'https://semdesperdicio.eco.br/',
     'https://www.semdesperdicio.eco.br/',
     'semdesperdicio.eco.br',
+    'localhost',
+    'localhost/sem-desperdicio'
 ];
 
 require __DIR__ . '/vendor/autoload.php';
@@ -39,6 +41,15 @@ if (in_array($origin, $allowed_domains)) {
     header('Content-Type: application/json');
 
     // Salva a receita no banco de dados
+    $dbConnection = new Database(
+        $config['DB_HOST'],
+        $config['DB_USERNAME'],
+        $config['DB_PASSWORD'],
+        $config['DB_DATABASE']
+    );
+    
+    $conn = $dbConnection->getConnection();
+    
     $stmt = $conn->prepare("INSERT INTO recipes (ingredients, revenue, created_at) VALUES (?, ?, NOW())");
     $stmt->bind_param("ss", $ingredients, $recipeText);
     $result = $stmt->execute();
