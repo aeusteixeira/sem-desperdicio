@@ -41,20 +41,9 @@ result.addEventListener('click', (e) => {
     if (e.target.id === 'saveRecipe') {
         const formattedData = e.target.parentElement.previousElementSibling.children[0].innerText;
         const url = `save.php?ingredients=${ingredients.value.trim()}&revenue=${encodeURIComponent(formattedData)}`;
-        
-        fetch(url)
-            .then((response) => {
-                if (response.ok) {
-                    alert('Receita salva com sucesso!');
-                    saveRecipeToLocalStorage(formattedData);
-                } else {
-                    alert('Erro ao salvar a receita.');
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+        alert('Receita salva com sucesso!');
+        saveRecipeToLocalStorage(formattedData);
+    } 
         
     });
 

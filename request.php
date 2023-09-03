@@ -36,6 +36,11 @@ if (in_array($origin, $allowed_domains)) {
     // Define o cabeçalho Content-Type para indicar que o conteúdo é JSON
     header('Content-Type: application/json');
 
+    // Salva a receita no banco de dados
+    $stmt = $conn->prepare("INSERT INTO recipes (ingredients, revenue, created_at) VALUES (?, ?, NOW())");
+    $stmt->bind_param("ss", $ingredients, $recipeText);
+    $result = $stmt->execute();
+
     // Retorna a resposta JSON para o frontend
     echo json_encode([
         'recipe' => $recipeText
