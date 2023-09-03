@@ -84,7 +84,7 @@ const saveRecipeToLocalStorage = (formattedData) => {
 result.addEventListener('click', (e) => {
     if (e.target.id === 'saveRecipe') {
         const formattedData = e.target.parentElement.previousElementSibling.children[0].innerText;
-        const url = `save.php?ingredients=${ingredients.value.trim()}&revenue=${encodeURIComponent(formattedData)}`;
+        //const url = `save.php?ingredients=${ingredients.value.trim()}&revenue=${encodeURIComponent(formattedData)}`;
         alert('Receita salva com sucesso!');
         saveRecipeToLocalStorage(formattedData);
     } 
