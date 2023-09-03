@@ -9,9 +9,9 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
         header('Access-Control-Allow-Origin: ' . $origin);
         echo 'API is working';
     } else {
-        echo 'API is not allowed'
+        echo 'API is not allowed';
     }
 } else {
-    echo 'No origin'
+    echo 'No origin';
 }
 ?>
