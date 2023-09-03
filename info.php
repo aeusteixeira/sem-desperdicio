@@ -20,8 +20,7 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
         echo "Acesso negado! (HTTP_ORIGIN não permitido)";
     }
 } else {
-    // Retorne um erro se o cabeçalho "Origin" não estiver presente
-    http_response_code(403); // Código de status "Proibido"
-    echo "Acesso negado! (HTTP_ORIGIN não definido)";
+    // Retorne "OK" se o cabeçalho "Origin" não estiver presente
+    echo "OK";
 }
 ?>
