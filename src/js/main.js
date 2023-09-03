@@ -6,27 +6,56 @@ const myRecipes = document.getElementById('myRecipes');
 const savedRecipesCount = document.getElementById('savedRecipesCount');
 const mealPlannerSwitch = document.getElementById('mealPlannerSwitch');
 
+// Função para compartilhar via Web Share API
+function shareRecipe(text) {
+    const sharedText = `Veja que delícia!\n\n${text}\n\nCrie receitas utilizando inteligência artificial com o Sem Desperdício. Acesse https://semdesperdicio.eco.br/`;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: sharedText,
+            text: sharedText,
+            url: 'https://www.semdesperdicio.eco.br/'
+        })
+        .then(() => {
+            console.log('Receita compartilhada com sucesso!');
+        })
+        .catch((error) => {
+            console.error('Erro ao compartilhar receita:', error);
+        });
+    }
+}
+
+// Função para renderizar a receita
 const renderRecipeCard = (formattedData, options = {
     remove: false,
     save: false
 }) => `
-<div class="card rounded shadow mb-2">
-    <div class="card-body">
-        <p class="card-text">
-            ${formattedData}
-        </p>
-    </div>
-    <div class="card-footer">
-        ${options.remove ? `<button class="btn btn-danger btn-sm" id="removeRecipe" onclick="removeRecipeFromLocalStorage('${formattedData}')">
-            Remover
-        </button>` : ''}
-
-        ${options.save ? `<button class="btn btn-success btn-sm" id="saveRecipe">
-            Salvar
-        </button>` : ''}
-    </div>
-</div>
-`;
+        <div class="card rounded shadow mb-2">
+            <div class="card-body">
+                <p class="card-text">
+                    ${formattedData}
+                </p>
+            </div>
+            <div class="card-footer">
+                ${options.remove ? `<button class="btn btn-danger btn-sm" id="removeRecipe" onclick="removeRecipeFromLocalStorage('${formattedData}')">
+                    <i class="fas fa-trash"></i>
+                    Remover
+                </button>` : ''}
+    
+                ${options.save ? `<button class="btn btn-success btn-sm" id="saveRecipe">
+                    <i class="fas fa-save"></i>
+                    Salvar em "Minhas receitas"
+                </button>` : ''}
+    
+                <button class="btn btn-sm share-button" 
+                    data-text="${formattedData}" 
+                    data-url="${window.location.href}"
+                    onclick="shareRecipe(this.getAttribute('data-text'), this.getAttribute('data-url'))">
+                    <i class="fab fa-whatsapp"></i>
+                    Compartilhar
+                </button>
+            </div>
+        </div>`;
 
 const saveRecipe = document.getElementById('saveRecipe');
 
