@@ -6,4 +6,7 @@ $allowed_domains = [
     'http://www.mysite2.com',
 ];
 
-var_dump($origin, $allowed_domains, in_array($origin, $allowed_domains));
+echo 'Origin: ' . $origin . '<br>';
+echo 'Domains: ' . implode(', ', $allowed_domains) . '<br>';
+echo 'This domain: ' . $_SERVER['HTTP_HOST'] . '<br>';
+echo 'Allowed: ' . (in_array($origin, $allowed_domains) ? 'yes' : 'no') . '<br>';
