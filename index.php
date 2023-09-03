@@ -54,8 +54,8 @@
                 </div>
                 --->
                 <div class="form-group">
-                    <button type="submit" class="btn btn-color-2" id="generateRevenue">
-                        Gerar receita
+                    <button type="submit" class="btn btn-color-2" id="generateRevenue" disabled>
+                        Temporalmente Indisponível
                     </button>
                 </div>
             </form>
