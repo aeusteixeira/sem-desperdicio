@@ -1,7 +1,19 @@
 <?php
 
+$origin = $_SERVER['HTTP_HOST'];
+$allowed_domains = [
+    'https://semdesperdicio.eco.br',
+    'https://www.semdesperdicio.eco.br',
+    'https://semdesperdicio.eco.br/',
+    'https://www.semdesperdicio.eco.br/',
+    'semdesperdicio.eco.br',
+];
+
 require_once(__DIR__ . '/config/database.php');
 $config = require_once(__DIR__ . '/config/config.php');
+
+
+if (in_array($origin, $allowed_domains)) {
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     http_response_code(405);
@@ -38,3 +50,8 @@ if ($result) {
 
 $stmt->close();
 $dbConnection->closeConnection();
+
+} else {
+    http_response_code(403);
+    echo 'Acesso negado! (Host não permitido)';
+}
