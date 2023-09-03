@@ -1,4 +1,7 @@
 <?php
+session_set_cookie_params(86400);
+
+session_start();
     $currentPage = 'index';
     include_once(__DIR__ . '/components/header.php');
     $config = require_once(__DIR__ . '/config/config.php');
@@ -53,11 +56,37 @@
                     </small>
                 </div>
                 --->
-                <div class="form-group">
-                    <button type="submit" class="btn btn-color-2" id="generateRevenue" disabled>
-                        Temporalmente Indisponível
-                    </button>
-                </div>
+                <?php
+
+                // Verifique se a sessão para o contador de solicitações existe
+                if (!isset($_SESSION['request_count'])) {
+                    $_SESSION['request_count'] = 0; // Inicialize o contador
+                }
+
+                // Verifique se o usuário já atingiu o limite de solicitações
+                if ($_SESSION['request_count'] >= 3) {
+                    // Exiba uma mensagem ou realize qualquer ação desejada quando o limite for atingido
+                    echo "
+                        <p class='text-danger'>
+                            Você já atingiu o limite de 3 solicitações. Aguarde 24 horas para gerar mais receitas.
+                        </p>
+                    ";
+                } else {
+                    // Se o usuário não atingiu o limite, renderize o botão
+                    echo '
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-color-2" id="generateRevenue">
+                            Gerar receita
+                        </button>
+                    </div>
+                    <hr>
+                    <p>
+                        <small class="form-text text-muted">
+                            <span class="text-danger">*</span> Você gerou <span id="requestCount">' . $_SESSION['request_count'] . '</span> de 3 solicitações. Aguarde 24 horas para gerar mais receitas.
+                        </small>
+                    ';
+                }
+                ?>
             </form>
         </section>
         <section id="result" class="mb-2">

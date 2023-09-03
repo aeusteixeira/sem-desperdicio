@@ -1,14 +1,33 @@
 <?php
+session_set_cookie_params(86400);
 
+session_start();
+
+// Verifica se a variável de sessão existe e defina um valor padrão se não existir
+if (!isset($_SESSION['request_count'])) {
+    $_SESSION['request_count'] = 0;
+}
+
+// Verifica se o usuário já excedeu o limite de 3 solicitações
+if ($_SESSION['request_count'] >= 3) {
+    http_response_code(403);
+    echo 'Acesso negado! Você já excedeu o limite de solicitações.';
+    exit;
+}
+
+// Incrementa o contador de solicitações
+$_SESSION['request_count']++;
+
+// Valida o host
 $origin = $_SERVER['HTTP_HOST'];
 $allowed_domains = [
-    //'https://semdesperdicio.eco.br',
-    //'https://www.semdesperdicio.eco.br',
-    //'https://semdesperdicio.eco.br/',
-    //'https://www.semdesperdicio.eco.br/',
-    //'semdesperdicio.eco.br',
-    //'localhost',
-    //'localhost/sem-desperdicio'
+  'https://semdesperdicio.eco.br',
+    'https://www.semdesperdicio.eco.br',
+    'https://semdesperdicio.eco.br/',
+    'https://www.semdesperdicio.eco.br/',
+    'semdesperdicio.eco.br',
+    'localhost',
+    'localhost/sem-desperdicio'
 ];
 
 require __DIR__ . '/vendor/autoload.php';
@@ -16,6 +35,7 @@ require_once(__DIR__ . '/config/database.php');
 $config = require_once(__DIR__ . '/config/config.php');
 
 use Orhanerday\OpenAi\OpenAi;
+
 
 if (in_array($origin, $allowed_domains)) {
 
