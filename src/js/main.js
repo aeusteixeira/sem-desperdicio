@@ -6,86 +6,27 @@ const myRecipes = document.getElementById('myRecipes');
 const savedRecipesCount = document.getElementById('savedRecipesCount');
 const mealPlannerSwitch = document.getElementById('mealPlannerSwitch');
 
-// Função para compartilhar via Web Share API
-function shareRecipe(text) {
-    const sharedText = `Veja que delícia!\n\n${text}\n\nCrie receitas utilizando inteligência artificial com o Sem Desperdício. Acesse https://semdesperdicio.eco.br/`;
-    
-    if (navigator.share) {
-        navigator.share({
-            title: sharedText,
-            text: sharedText,
-            url: 'https://www.semdesperdicio.eco.br/'
-        })
-        .then(() => {
-            console.log('Receita compartilhada com sucesso!');
-        })
-        .catch((error) => {
-            console.error('Erro ao compartilhar receita:', error);
-        });
-    }
-}
-
-
-
-// Função para renderizar a receita
 const renderRecipeCard = (formattedData, options = {
     remove: false,
     save: false
 }) => `
-        <div class="card rounded shadow mb-2">
-            <div class="card-body">
-                <p class="card-text">
-                    ${formattedData}
-                </p>
-            </div>
-            <div class="card-footer">
-                ${options.remove ? `<button class="btn btn-danger btn-sm" id="removeRecipe" onclick="removeRecipeFromLocalStorage('${formattedData}')">
-                    <i class="fas fa-trash"></i>
-                    Remover
-                </button>` : ''}
-    
-                ${options.save ? `<button class="btn btn-success btn-sm" id="saveRecipe">
-                    <i class="fas fa-save"></i>
-                    Salvar em "Minhas receitas"
-                </button>` : ''}
-    
-                <button class="btn btn-sm share-button" 
-                    data-text="${formattedData}" 
-                    data-url="${window.location.href}"
-                    onclick="shareRecipe(this.getAttribute('data-text'), this.getAttribute('data-url'))">
-                    <i class="fab fa-whatsapp"></i>
-                    Compartilhar
-                </button>
-            </div>
-        </div>`;
+<div class="card rounded shadow mb-2">
+    <div class="card-body">
+        <p class="card-text">
+            ${formattedData}
+        </p>
+    </div>
+    <div class="card-footer">
+        ${options.remove ? `<button class="btn btn-danger btn-sm" id="removeRecipe" onclick="removeRecipeFromLocalStorage('${formattedData}')">
+            Remover
+        </button>` : ''}
 
-// Verifica se a API Web Share é suportada no navegador
-if (navigator.share) {
-    const shareButton = document.querySelector('.share-button');
-
-    // Adicione um evento de clique ao botão de compartilhamento
-    shareButton.addEventListener('click', async () => {
-        try {
-            const text = shareButton.getAttribute('data-text');
-            const url = shareButton.getAttribute('data-url');
-
-            await navigator.share({
-                title: 'Compartilhar Receita',
-                text: text,
-                url: url,
-            });
-        } catch (error) {
-            console.error('Erro ao compartilhar:', error);
-        }
-    });
-} else {
-    // Fallback para navegadores que não suportam a API Web Share
-    console.log('A API Web Share não é suportada neste navegador.');
-}
-
-
-;
-
+        ${options.save ? `<button class="btn btn-success btn-sm" id="saveRecipe">
+            Salvar
+        </button>` : ''}
+    </div>
+</div>
+`;
 
 const saveRecipe = document.getElementById('saveRecipe');
 
@@ -102,9 +43,9 @@ result.addEventListener('click', (e) => {
         const url = `save.php?ingredients=${ingredients.value.trim()}&revenue=${encodeURIComponent(formattedData)}`;
         alert('Receita salva com sucesso!');
         saveRecipeToLocalStorage(formattedData);
-    }
-
-});
+    } 
+        
+    });
 
 const setLoadingState = (button) => {
     button.setAttribute('disabled', 'disabled');
