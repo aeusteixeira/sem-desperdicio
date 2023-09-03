@@ -4,6 +4,8 @@
 
 Sem Desperdício é uma aplicação web que utiliza a API OpenAI para interpretar receitas culinárias e fornecer uma sugestão detalhada de como preparar o prato. Você pode inserir uma lista de ingredientes que possui ou deseja aproveitar em sua casa no campo de texto fornecido, e a aplicação irá gerar uma interpretação passo a passo para você seguir.
 
+Para testar a aplicação online, acesse [aqui](https://seu-usuario.github.io/seu-projeto/).
+
 ## Como Funciona
 
 1. Digite os alimentos que você possui ou deseja aproveitar em sua casa no campo de texto fornecido.
