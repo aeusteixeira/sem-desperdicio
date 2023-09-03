@@ -10,7 +10,9 @@ $allowed_domains = [
 ];
 
 require __DIR__ . '/vendor/autoload.php';
+require_once(__DIR__ . '/config/database.php');
 $config = require_once(__DIR__ . '/config/config.php');
+
 use Orhanerday\OpenAi\OpenAi;
 
 if (in_array($origin, $allowed_domains)) {
