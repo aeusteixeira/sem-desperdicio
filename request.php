@@ -2,13 +2,13 @@
 
 $origin = $_SERVER['HTTP_HOST'];
 $allowed_domains = [
-    'https://semdesperdicio.eco.br',
-    'https://www.semdesperdicio.eco.br',
-    'https://semdesperdicio.eco.br/',
-    'https://www.semdesperdicio.eco.br/',
-    'semdesperdicio.eco.br',
-    'localhost',
-    'localhost/sem-desperdicio'
+    //'https://semdesperdicio.eco.br',
+    //'https://www.semdesperdicio.eco.br',
+    //'https://semdesperdicio.eco.br/',
+    //'https://www.semdesperdicio.eco.br/',
+    //'semdesperdicio.eco.br',
+    //'localhost',
+    //'localhost/sem-desperdicio'
 ];
 
 require __DIR__ . '/vendor/autoload.php';
