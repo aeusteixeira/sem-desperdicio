@@ -29,6 +29,10 @@
                     <a href="terms_of_use.php" title="Termos de Uso" class="text-color-6
                         <? if ($currentPage === 'terms_of_use') { echo 'font-weight-bold'; } ?>
                     ">Termos de Uso</a>
+                    <span class="mx-2">|</span>
+                    <a href="privacy_policy.php" title="Política de Privacidade" class="text-color-6
+                        <? if ($currentPage === 'privacy_policy') { echo 'font-weight-bold'; } ?>
+                    ">Política de Privacidade</a>
                 </div>
             </div>
         </div>
