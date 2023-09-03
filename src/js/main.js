@@ -8,7 +8,22 @@ const mealPlannerSwitch = document.getElementById('mealPlannerSwitch');
 
 // Função para compartilhar via Web Share API
 function shareRecipe(text) {
-    const sharedText = `Veja que delícia!\n\n${text}\n\nCrie receitas utilizando inteligência artificial com o Sem Desperdício. Acesse https://semdesperdicio.eco.br/`;
+
+    const sharedText = `
+Oi! Queria compartilhar uma receita incrível com você. 🍽️
+
+Veja que delícia:
+\n
+\n
+${text}
+\n
+\n
+Com o Sem Desperdício, você pode criar receitas incríveis usando inteligência artificial. É fácil e divertido! Acesse https://semdesperdicio.eco.br/ e experimente você mesmo.
+\n
+Bom apetite! 😊
+\n
+#SemDesperdicio
+`;
     
     if (navigator.share) {
         navigator.share({
