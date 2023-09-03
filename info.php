@@ -5,6 +5,7 @@ $allowed_domains = [
     'https://www.semdesperdicio.eco.br',
     'https://semdesperdicio.eco.br/',
     'https://www.semdesperdicio.eco.br/',
+    'semdesperdicio.eco.br',
     'localhost',
     'localhost:8080',
     'localhost/sem-desperdicio',
