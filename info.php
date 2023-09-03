@@ -1,9 +1,13 @@
 <?php
 $origin = $_SERVER['HTTP_ORIGIN'];
 $allowed_domains = [
-    'http://mysite1.com',
-    'https://www.mysite2.com',
-    'http://www.mysite2.com',
+    'https://semdesperdicio.eco.br',
+    'https://www.semdesperdicio.eco.br',
+    'https://semdesperdicio.eco.br/',
+    'https://www.semdesperdicio.eco.br/',
+    'localhost',
+    'localhost:8080',
+    'localhost/sem-desperdicio',
 ];
 
 echo 'Origin: ' . $origin . '<br>';
