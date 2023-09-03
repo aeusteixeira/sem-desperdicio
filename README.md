@@ -57,4 +57,4 @@ Esta aplicação é gratuita e não coleta dados pessoais, exceto pelas informa�
 
 ## Licença
 
-Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+Este projeto está licenciado sob a [Licença MIT com a Commons Clause](https://opensource.org/licenses/MIT).
