@@ -1,17 +1,9 @@
 <?php
-if (isset($_SERVER['HTTP_ORIGIN'])) {
-    $origin = $_SERVER['HTTP_ORIGIN'];
-    $allowed_domains = [
-        'https://semdesperdicio.eco.br/',
-    ];
+$origin = $_SERVER['HTTP_ORIGIN'];
+$allowed_domains = [
+    'http://mysite1.com',
+    'https://www.mysite2.com',
+    'http://www.mysite2.com',
+];
 
-    if (in_array($origin, $allowed_domains)) {
-        header('Access-Control-Allow-Origin: ' . $origin);
-        echo 'API is working';
-    } else {
-        echo 'API is not allowed';
-    }
-} else {
-    echo 'No origin';
-}
-?>
+var_dump($origin, $allowed_domains, in_array($origin, $allowed_domains));
