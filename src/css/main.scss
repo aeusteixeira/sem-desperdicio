@@ -124,7 +124,15 @@ body {
     border-radius: 4px 4px 0 0;
 }
 
+.share-button{
+    background-color: #3FC147 !important;
+    color: white !important;
+}
 
+.share-button:hover{
+    background-color: #239716;
+    color: white;
+}
 
 
 // Torna a fonte responsiva. Por padrão, vem desativada.

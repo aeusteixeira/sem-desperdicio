@@ -103,6 +103,16 @@ body {
   border-radius: 4px 4px 0 0;
 }
 
+.share-button {
+  background-color: #3FC147 !important;
+  color: white !important;
+}
+
+.share-button:hover {
+  background-color: #239716;
+  color: white;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
