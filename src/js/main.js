@@ -13,15 +13,15 @@ function shareRecipe(text) {
 Oi! Queria compartilhar uma receita incrível com você. 🍽️
 
 Veja que delícia:
-\n
-\n
+
 ${text}
-\n
-\n
-Com o Sem Desperdício, você pode criar receitas incríveis usando inteligência artificial. É fácil e divertido! Acesse https://semdesperdicio.eco.br/ e experimente você mesmo.
-\n
+Com o Sem Desperdício, você pode criar receitas incríveis usando inteligência artificial com os ingredientes que você tem em casa para evitar o desperdício de alimentos.
+
+Acesse agora mesmo e experimente!
+🔗 https://semdesperdicio.eco.br/
+
 Bom apetite! 😊
-\n
+
 #SemDesperdicio
 `;
     
