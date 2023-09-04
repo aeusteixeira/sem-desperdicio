@@ -89,7 +89,7 @@ function isActivePage($currentPage, $pageName) {
                     </li>
                     <li class="nav-item <?= isActivePage($currentPage, 'my_recipes') ?>">
                         <a class="nav-link" href="my_recipes.php">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-book"></i>
                             <span class="badge badge-pill badge-color-1" id="savedRecipesCount">
                                 <script>
                                     localStorage.getItem('recipes') ? savedRecipesCount.innerText = JSON.parse(localStorage.getItem('recipes')).length : savedRecipesCount.innerText = 0;
