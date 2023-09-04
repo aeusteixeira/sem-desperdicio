@@ -22,6 +22,7 @@ function isActivePage($currentPage, $pageName) {
 
   gtag('config', 'G-3WWVTSRZD0');
 </script>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-9977411139806346?ers=1" nonce="MOLigFUFdv3AK8TSva9WcQ"></script><script nonce="MOLigFUFdv3AK8TSva9WcQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
