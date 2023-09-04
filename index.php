@@ -66,16 +66,25 @@ session_start();
                 // Verifique se o usuário já atingiu o limite de solicitações
                 if ($_SESSION['request_count'] >= 3) {
                     // Exiba uma mensagem ou realize qualquer ação desejada quando o limite for atingido
-                    echo "
-                        <p class='text-danger'>
-                            Você já atingiu o limite de 3 solicitações. Aguarde 24 horas para gerar mais receitas.
-                        </p>
-                    ";
+                    echo '
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-color-2" id="generateRevenue"
+                        class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback="onSubmit" 
+        data-action="submit">
+                            Gerar receita
+                        </button>
+                    ';
                 } else {
                     // Se o usuário não atingiu o limite, renderize o botão
                     echo '
                     <div class="form-group">
-                        <button type="submit" class="btn btn-color-2" id="generateRevenue">
+                        <button type="submit" class="btn btn-color-2" id="generateRevenue"
+                        class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback="onSubmit" 
+        data-action="submit">
                             Gerar receita
                         </button>
                     </div>

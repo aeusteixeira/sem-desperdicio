@@ -61,6 +61,12 @@
         setInterval(animateEmojiChange, 2000); // Altera o emoji a cada 2 segundos (2000 milissegundos)
     </script>
 </footer>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+   function onSubmit(token) {
+     document.getElementById("form").submit();
+   }
+ </script>
 <script src="src/js/jquery.min.js"></script>
 <script src="src/js/popper.min.js"></script>
 <script src="src/js/bootstrap.min.js"></script>
