@@ -26,8 +26,6 @@ $allowed_domains = [
     'https://semdesperdicio.eco.br/',
     'https://www.semdesperdicio.eco.br/',
     'semdesperdicio.eco.br',
-    'localhost',
-    'localhost/sem-desperdicio'
 ];
 
 require __DIR__ . '/vendor/autoload.php';
@@ -43,7 +41,7 @@ if (in_array($origin, $allowed_domains)) {
 
     $open_ai = new OpenAi($config['OPEN_IA_KEY']);
 
-    $prompt = "Você é um ex-chef de cozinha que trabalha em um blog que ajuda as pessoas a criarem pratos com os ingredients que tem em casa. Preciso que você me de o passo a passo de como construir uma refeição, prato de comida ou lanche com o que as pessoas tem em casa. O que o cliente te passou foi:" . $ingredients;
+    $prompt = "Você é um ex-chef de cozinha que trabalha em um blog que ajuda as pessoas a criarem pratos com os ingredients que tem em casa. Preciso que você me de o passo a passo de como construir uma refeição, prato de comida ou lanche com o que as pessoas tem em casa. Preciso que você crie um prato SOMENTE com o seguinte ingredientes:" . $ingredients;
 
     $response = $open_ai->completion([
         'model' => 'text-davinci-002',
