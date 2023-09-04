@@ -10,11 +10,12 @@ const mealPlannerSwitch = document.getElementById('mealPlannerSwitch');
 function shareRecipe(text) {
 
     const sharedText = `
-Oi! Queria compartilhar uma receita incrível com você. 🍽️
+*Oi! Queria compartilhar uma receita incrível com você. 🍽️*
 
 Veja que delícia:
 
 ${text}
+
 Com o Sem Desperdício, você pode criar receitas incríveis usando inteligência artificial com os ingredientes que você tem em casa para evitar o desperdício de alimentos.
 
 Acesse agora mesmo e experimente!
